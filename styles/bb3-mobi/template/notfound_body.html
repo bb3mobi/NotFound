@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="{S_USER_LANG}">
+<head>
+<meta charset="{S_CONTENT_ENCODING}">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>{PAGE_TITLE} - {SITENAME}</title>
+
+<link href="{T_STYLESHEET_BOARD_LINK}" rel="stylesheet">
+<link href="{T_STYLESHEET_RESPONSIVE_LINK}" rel="stylesheet" media="only screen and (min-width: 320px)">
+
+</head>
+
+<body id="phpbb" class="nojs notouch section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
+<div id="wrap">
+
+	<div id="page-header">
+
+		<div class="headerbar">
+			<div class="inner">
+			<a id="logo" class="logo" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->">{SITE_LOGO_IMG}</a>
+			<h1>{SITENAME}</h1>
+			<p>{SITE_DESCRIPTION}</p>
+			</div>
+		</div>
+
+		<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+		<div class="navbar">
+			<div class="inner">
+				<ul class="linklist leftside">
+					<li class="small-icon">
+					<a href="{U_SEARCH}" title="{L_SEARCH_ADV}"><img src="{T_THEME_PATH}/images/icon_search.png" alt=""/></a></li>
+				</ul>
+				<div id="search-box" class="search-box rightside">
+					<form action="{U_SEARCH}" method="get" id="search">
+					<div>
+						<input name="keywords" id="keywords" type="search" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox autowidth" size="20" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
+						<button class="button2" type="submit" title="{L_SEARCH}">{L_SEARCH}</button>
+						{S_SEARCH_HIDDEN_FIELDS}
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- ENDIF -->
+
+	</div>
+
+	<div id="page-body">
+
+		<div class="panel" id="error-text">
+			<h2>{NOT_FOUND_PAGE} - {NOT_FOUND_TITLE}</h2>
+			<div class="content">{NOT_FOUND_TEXT}</div>
+		</div>
+
+		<!-- IF .topicrow -->
+		<div class="forumbg">
+		<div class="header">{L_SEARCH_ACTIVE_TOPICS}</div>
+		<!-- BEGIN topicrow -->
+		<div class="row<!-- IF topicrow.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+			<div class="inner">
+			<a href="{topicrow.U_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a> <span class="posts">[<!-- IF topicrow.REPLIES -->{topicrow.REPLIES}<!-- ELSE -->1<!-- ENDIF -->]</span>
+			<!-- IF not S_IS_BOT -->
+			<br /><!-- IF topicrow.TOPIC_AUTHOR_FULL != topicrow.LAST_POST_AUTHOR --><span>{topicrow.TOPIC_AUTHOR_FULL}</span> / <!-- ENDIF --><span>{topicrow.LAST_POST_AUTHOR}</span> &laquo; <a href="{topicrow.U_LAST_POST}" title="{L_GOTO_LAST_POST}">{topicrow.LAST_POST_TIME}</a>
+			<!-- ENDIF -->
+			</div>
+		</div>
+		<!-- END topicrow -->
+		</div>
+		<!-- ENDIF -->
+
+	</div>
+
+	<div id="page-footer">
+		<div class="copyright">
+			{CREDIT_LINE}
+			<br />BB3.MOBi {NOT_FOUND_AUTHOR}
+			<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
+		</div>
+	</div>
+
+</div>
+</body>
+</html>
