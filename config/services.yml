@@ -1,0 +1,13 @@
+services:
+    bb3mobi.NotFound.controller:
+        class: bb3mobi\NotFound\controller\notfound
+        arguments:
+            - @user
+            - @auth
+            - @config
+            - @config_text
+            - @template
+            - @dbal.conn
+            - %core.php_ext%
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }

@@ -1,0 +1,26 @@
+{
+    "name": "bb3mobi/NotFound",
+    "type": "phpbb-extension",
+    "description": "Error 404, not found text",
+    "homepage": "http://bb3.mobi",
+    "keywords": ["404", "error", "not found", "page", "seo", "redirect"],
+    "version": "1.0.1",
+    "time": "2014-12-27",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Anvar",
+            "homepage": "http://apwa.ru",
+            "role": "Developer Extension"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "extra": {
+        "display-name": "Not Found Page",
+        "soft-require": {
+        "phpbb/phpbb": "3.1.*@dev"
+        }
+    }
+}
